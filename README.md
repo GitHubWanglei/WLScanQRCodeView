@@ -19,3 +19,7 @@
     };
     
     //****************************** 添加扫描组件 *************************************
+
+效果图:
+
+![image](https://raw.githubusercontent.com/GitHubWanglei/WLScanQRCodeView/master/image.png)
