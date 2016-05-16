@@ -36,9 +36,23 @@
         vc.result = result;
         [self.navigationController pushViewController:vc animated:YES];
     };
+    //打开关闭闪光灯
+    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(20, self.view.bounds.size.height-50, 30, 30)];
+    [btn setBackgroundImage:[UIImage imageNamed:@"torch.png"] forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(turnTorchOn:) forControlEvents:UIControlEventTouchUpInside];
+    [scanView addSubview:btn];
     
     //****************************** 添加扫描组件 *************************************
     self.scanView = scanView;
+    
+}
+
+-(void)turnTorchOn:(UIButton *)btn{
+    if (self.scanView.isTorchOn) {
+        [self.scanView turnTorchOn:NO];
+    }else{
+        [self.scanView turnTorchOn:YES];
+    }
     
 }
 

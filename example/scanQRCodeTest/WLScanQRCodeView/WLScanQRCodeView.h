@@ -15,13 +15,18 @@ typedef void(^scanResult)(WLScanQRCodeView *view, NSString *result);
 //Callback after the instance to commplete scanning QR code
 @property (nonatomic, strong) scanResult scanResultHandle;
 
+@property (nonatomic, assign) BOOL isTorchOn;
+
 //Initialization method
-+(instancetype)viewWithFrame:(CGRect)viewFrame scanScope:(CGRect)scope;
++ (instancetype)viewWithFrame:(CGRect)viewFrame scanScope:(CGRect)scope;
+
+//turn torch on or off
+- (void)turnTorchOn:(BOOL)on;
 
 //Start scanning
--(void)startRunning;
+- (void)startRunning;
 
 //Stop scanning
--(void)stopRunning;
+- (void)stopRunning;
 
 @end

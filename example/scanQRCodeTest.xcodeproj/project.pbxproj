@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6149A58F1CE99ECF00F64792 /* torch.png in Resources */ = {isa = PBXBuildFile; fileRef = 6149A58E1CE99ECF00F64792 /* torch.png */; };
 		61C09DE41C2D2E640039CA77 /* scanBackgroundImg.png in Resources */ = {isa = PBXBuildFile; fileRef = 61C09DE01C2D2E640039CA77 /* scanBackgroundImg.png */; };
 		61C09DE51C2D2E640039CA77 /* scanLine.png in Resources */ = {isa = PBXBuildFile; fileRef = 61C09DE11C2D2E640039CA77 /* scanLine.png */; };
 		61C09DE61C2D2E640039CA77 /* WLScanQRCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 61C09DE31C2D2E640039CA77 /* WLScanQRCodeView.m */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6149A58E1CE99ECF00F64792 /* torch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = torch.png; sourceTree = "<group>"; };
 		61C09DE01C2D2E640039CA77 /* scanBackgroundImg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scanBackgroundImg.png; sourceTree = "<group>"; };
 		61C09DE11C2D2E640039CA77 /* scanLine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scanLine.png; sourceTree = "<group>"; };
 		61C09DE21C2D2E640039CA77 /* WLScanQRCodeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLScanQRCodeView.h; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				61D054311C2AB1E800235658 /* scanViewController.m */,
 				61D054331C2ABAE000235658 /* resultViewController.h */,
 				61D054341C2ABAE000235658 /* resultViewController.m */,
+				6149A58E1CE99ECF00F64792 /* torch.png */,
 				61C09DDF1C2D2E640039CA77 /* WLScanQRCodeView */,
 				61D0541B1C2AA2A300235658 /* Main.storyboard */,
 				61D0541E1C2AA2A300235658 /* Assets.xcassets */,
@@ -167,6 +170,7 @@
 			files = (
 				61D054221C2AA2A300235658 /* LaunchScreen.storyboard in Resources */,
 				61D0541F1C2AA2A300235658 /* Assets.xcassets in Resources */,
+				6149A58F1CE99ECF00F64792 /* torch.png in Resources */,
 				61C09DE41C2D2E640039CA77 /* scanBackgroundImg.png in Resources */,
 				61C09DE51C2D2E640039CA77 /* scanLine.png in Resources */,
 				61D0541D1C2AA2A300235658 /* Main.storyboard in Resources */,
@@ -296,6 +300,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = scanQRCodeTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wanglei.scanQRCodeTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -307,6 +312,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = scanQRCodeTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wanglei.scanQRCodeTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";

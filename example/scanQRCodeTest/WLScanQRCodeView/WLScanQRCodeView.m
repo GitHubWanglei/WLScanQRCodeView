@@ -45,6 +45,7 @@
         [captureDevice setTorchMode:AVCaptureTorchModeAuto];
         [captureDevice unlockForConfiguration];
     }
+    self.isTorchOn = NO;
     
     //创建输入流
     NSError *createInpuError;
@@ -187,6 +188,26 @@
         AVMetadataMachineReadableCodeObject *object = metadataObjects.firstObject;
         if (self.scanResultHandle) {
             self.scanResultHandle(self, object.stringValue);
+        }
+    }
+}
+
+- (void)turnTorchOn:(BOOL)on{
+    Class captureDeviceClass = NSClassFromString(@"AVCaptureDevice");
+    if (captureDeviceClass != nil) {
+        AVCaptureDevice *device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
+        if ([device hasTorch] && [device hasFlash]){
+            [device lockForConfiguration:nil];
+            if (on) {
+                [device setTorchMode:AVCaptureTorchModeOn];
+                [device setFlashMode:AVCaptureFlashModeOn];
+                self.isTorchOn = YES;
+            } else {
+                [device setTorchMode:AVCaptureTorchModeOff];
+                [device setFlashMode:AVCaptureFlashModeOff];
+                self.isTorchOn = NO;
+            }
+            [device unlockForConfiguration];
         }
     }
 }
