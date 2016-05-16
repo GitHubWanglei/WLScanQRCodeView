@@ -6,6 +6,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
+#import <AudioToolbox/AudioToolbox.h>
 
 @class WLScanQRCodeView;
 typedef void(^scanResult)(WLScanQRCodeView *view, NSString *result);
@@ -15,7 +17,11 @@ typedef void(^scanResult)(WLScanQRCodeView *view, NSString *result);
 //Callback after the instance to commplete scanning QR code
 @property (nonatomic, strong) scanResult scanResultHandle;
 
+//闪光灯
 @property (nonatomic, assign) BOOL isTorchOn;
+
+//是否有开启相机权限
+@property (nonatomic, assign) BOOL ishaveAuthorization;
 
 //Initialization method
 + (instancetype)viewWithFrame:(CGRect)viewFrame scanScope:(CGRect)scope;

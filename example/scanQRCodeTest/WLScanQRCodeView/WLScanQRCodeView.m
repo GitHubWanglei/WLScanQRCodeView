@@ -6,8 +6,6 @@
 //
 
 #import "WLScanQRCodeView.h"
-#import <AVFoundation/AVFoundation.h>
-#import <AudioToolbox/AudioToolbox.h>
 
 @interface WLScanQRCodeView ()<AVCaptureMetadataOutputObjectsDelegate>
 
@@ -36,6 +34,12 @@
 }
 
 -(void)initView{
+    
+    //权限判断
+    AVAuthorizationStatus authorizationStatus = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
+    if (authorizationStatus == AVAuthorizationStatusRestricted || authorizationStatus == AVAuthorizationStatusDenied) {
+        return;
+    }
     
     //获取捕捉设备(摄像头)
     AVCaptureDevice *captureDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
@@ -209,6 +213,15 @@
             }
             [device unlockForConfiguration];
         }
+    }
+}
+
+- (BOOL)ishaveAuthorization{
+    AVAuthorizationStatus authorizationStatus = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
+    if (authorizationStatus == AVAuthorizationStatusRestricted || authorizationStatus == AVAuthorizationStatusDenied) {
+        return NO;
+    }else{
+        return YES;
     }
 }
 

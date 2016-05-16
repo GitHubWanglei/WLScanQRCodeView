@@ -28,6 +28,11 @@
     CGRect scanView_scope = CGRectMake(self.view.bounds.size.width/2-240/2, self.view.bounds.size.height/2-240/2, 240, 240);
     WLScanQRCodeView *scanView = [WLScanQRCodeView viewWithFrame:self.view.bounds scanScope:scanView_scope];
     [self.view addSubview:scanView];
+    
+    if (![scanView ishaveAuthorization]) {
+        NSLog(@"无权限");
+    }
+    
     //开启扫描
     [scanView startRunning];
     //回调
